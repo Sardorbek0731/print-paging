@@ -1,17 +1,37 @@
-/** @format */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
 
 body {
-  font-family: "Times New Roman", Times, serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
   box-sizing: border-box;
-  color: #f8f8f8;
-  background: linear-gradient(45deg, red, blue);
+  background: url(./bg.jpg);
+  background-size: cover;
+}
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
 }
 
 .container {
-  margin: 4em auto;
-  border: 2px solid black;
-  width: 50vw;
-  box-shadow: 5px 5px 5px 15px #f8f8f8;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 2rem;
+  padding: 3rem;
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
 }
 
 .sitting {
@@ -19,57 +39,68 @@ body {
   justify-content: space-around;
 }
 
-.choose_type_printer {
-  width: 250px;
-  text-align: center;
-  padding-top: 2em;
-}
-
-.choose_type_printer > select {
-  height: 2em;
-  width: 12em;
-}
 .errorMessage {
-  margin: 0;
-  padding: 0;
   display: none;
+  position: absolute;
+  bottom: 0.5rem;
 }
 .errorMessage p {
   color: red;
-  margin: 0;
-  padding: 0;
-  margin-bottom: 1rem;
 }
 
 .btn-1 {
-  height: 2em;
-  width: 8em;
+  height: 2.9rem;
+  width: 8rem;
+  cursor: pointer;
   border-radius: 6px;
   border: none;
-  background-color: blue;
+  font-size: 1.01rem;
   color: #f8f8f8;
-  background: linear-gradient(135deg, rgb(50, 107, 160) 60%, cyan);
-  margin-left: 2em;
+  transition: all 0.3s;
+  background-color: rgb(16, 107, 180);
+}
+.btn-1:hover {
+  background-color: rgb(40, 137, 217);
 }
 
-.parametr {
-  /* float: left; */
-  margin: 2em 1em 1em 1em;
+label,
+p {
+  margin-bottom: 0.5rem;
+  color: rgba(0, 0, 0, 0.8);
+}
+.inNumber {
+  display: flex;
+  align-items: center;
+  width: 8rem;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 0.5rem;
+  padding: 0 1.1rem;
+  height: 2.9rem;
+  background-color: white;
+}
+.inNumber:last-child {
+  margin-right: 0;
 }
 
 .parametr > input {
-  height: 2em;
-  margin: 0.5em auto;
+  outline: none;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 0.5rem;
+  margin-right: 1.2rem;
+  padding: 0 1.1rem;
+  height: 2.9rem;
 }
 
 .text-area {
-  width: 42vw;
-  height: 10vw;
-  overflow: auto;
-  padding: 1em auto;
+  background-color: white;
+  height: 3vw;
+  outline: none;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 0.5rem;
+  margin-top: 0.5rem;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
 }
-
-.textArea {
-  text-align: center;
-  margin: 0 auto 1em;
+.mb-0 {
+  margin-bottom: 0;
 }

@@ -5,52 +5,53 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>betlash</title>
+    <title>Print Page</title>
     <link rel=" stylesheet" href="main.css" />
   </head>
   <body>
     <div class="container">
-      <div class="sitting">
-        <div class="choose_type_printer">
-          <p>Printerlar Modellari</p>
-          <select class="printer-models">
-            <option>HP 50-10</option>
-            <option>Cannon 29 10</option>
-            <option selected>HP 50-10</option>
-            <option>HP 50-10</option>
-            <option>HP 50-10</option>
-          </select>
-        </div>
-        <div class="parametr">
-          <label for="firstPage">Boshlang'ich varoq</label><br />
-          <input type="number" id="firstPage" class="inNumber" /><br />
-          <label for="lastPage">Oxirgi varoq</label><br />
-          <input type="number" id="lastPage" class="inNumber" /><br /><br />
-          <button type="submit" id="values" class="btn-1">OK</button
-          ><br /><br />
+      <div class="parametr">
+        <input
+          type="text"
+          oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
+          id="firstPage"
+          placeholder="Boshlang'ich varoq"
+        />
+        <input
+          type="text"
+          id="lastPage"
+          placeholder="Oxirgi varoq"
+          oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
+        />
+        <button type="submit" id="values" class="btn-1">Javoblar</button
+        ><br /><br />
 
-          <label for="totalPages">Jami kitob varoqi</label><br />
-          <input type="number" id="totalPages" class="inNumber" /><br />
-
-          <label for="numberOfNeeds">Yetmagan varoqlar</label><br />
-          <input type="number" id="numberOfNeeds" class="inNumber" /><br />
-          <div class="errorMessage" id="error-message">
-            <p>
-              Varaqlar kiritilishini <br />
-              qaytadan tekshiring!
-            </p>
+        <div class="flex">
+          <div class="column">
+            <label for="totalPages">Jami kitob varoqi</label>
+            <div id="totalPages" class="inNumber"></div>
           </div>
-          <label for="printPageNumber">Qog'ozlar soni</label><br />
-          <input type="number" id="printPageNumber" class="inNumber" /><br />
+
+          <div class="column">
+            <label for="numberOfNeeds">Yetmagan varoqlar</label>
+            <div id="numberOfNeeds" class="inNumber"></div>
+          </div>
+          <div class="column">
+            <label for="printPageNumber">Qog'ozlar soni</label>
+            <div id="printPageNumber" class="inNumber"></div>
+          </div>
         </div>
       </div>
       <div class="front-pages textArea">
         <p>Oldi tomon varaqlari</p>
-        <textarea class="text-area" id="front-page">front pages</textarea>
+        <div class="text-area" id="front-page"></div>
       </div>
       <div class="back-pages textArea">
         <p>Orqa tomon varaqlari</p>
-        <textarea class="text-area" id="back-page">back pages</textarea>
+        <div class="text-area mb-0" id="back-page"></div>
+      </div>
+      <div class="errorMessage" id="error-message">
+        <p>Varaqlar kiritilishini qaytadan tekshiring!</p>
       </div>
     </div>
     <script src="app.js"></script>

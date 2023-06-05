@@ -17,38 +17,39 @@ function errorMessageFunc() {
 }
 
 values.addEventListener("click", () => {
-  frontPage.value = ``;
-  backPage.value = ``;
+  frontPage.innerHTML = ``;
+  backPage.innerHTML = ``;
   if (firstPage.value > 0 || lastPage.value > firstPage.value) {
-    totalPages.value = lastPage.value - firstPage.value + 1;
-    if (totalPages.value % 4 === 0) {
-      numberOfNeeds.value = 0;
+    totalPages.innerHTML = lastPage.value - firstPage.value + 1;
+    if (totalPages.innerHTML % 4 === 0) {
+      numberOfNeeds.innerHTML = 0;
     } else {
-      numberOfNeeds.value = 4 - (totalPages.value % 4);
+      numberOfNeeds.innerHTML = 4 - (totalPages.innerHTML % 4);
     }
-    printPageNumber.value = (+totalPages.value + +numberOfNeeds.value) / 4;
-    if (totalPages.value % 4 === 0) {
+    printPageNumber.innerHTML =
+      (+totalPages.innerHTML + +numberOfNeeds.innerHTML) / 4;
+    if (totalPages.innerHTML % 4 === 0) {
       let frontArr = [];
       let backArr = [];
       let newLastPage = +lastPage.value;
       let newFirstPage = +firstPage.value;
-      for (let i = 0; i < +totalPages.value / 4; i++) {
+      for (let i = 0; i < +totalPages.innerHTML / 4; i++) {
         frontArr.push(newLastPage);
         frontArr.push(newFirstPage);
         newLastPage = newLastPage - 2;
         newFirstPage = newFirstPage + 2;
       }
-      for (let i = 0; i < +totalPages.value / 4; i++) {
+      for (let i = 0; i < +totalPages.innerHTML / 4; i++) {
         backArr.push(newLastPage);
         backArr.push(newFirstPage);
         newLastPage = newLastPage - 2;
         newFirstPage = newFirstPage + 2;
       }
       frontArr.forEach((item) => {
-        frontPage.value += `${item},`;
+        frontPage.innerHTML += `${item},`;
       });
       backArr.forEach((item) => {
-        backPage.value += `${item},`;
+        backPage.innerHTML += `${item},`;
       });
     } else {
       errorMessageFunc();
