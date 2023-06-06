@@ -45,11 +45,19 @@ values.addEventListener("click", () => {
         newLastPage = newLastPage - 2;
         newFirstPage = newFirstPage + 2;
       }
-      frontArr.forEach((item) => {
-        frontPage.innerHTML += `${item},`;
+      frontArr.forEach((item, i) => {
+        if (i === frontArr.length - 1) {
+          frontPage.innerHTML += `${item}`;
+        } else {
+          frontPage.innerHTML += `${item},`;
+        }
       });
-      backArr.forEach((item) => {
-        backPage.innerHTML += `${item},`;
+      backArr.forEach((item, i) => {
+        if (i === frontArr.length - 1) {
+          backPage.innerHTML += `${item}`;
+        } else {
+          backPage.innerHTML += `${item},`;
+        }
       });
     } else {
       errorMessageFunc();
